@@ -1,0 +1,35 @@
+# Syntax checks only. These jobs never call the TokenRa API and need no secrets.
+name: check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - uses: actions/setup-go@v7
+        with:
+          go-version: stable
+      - name: Shell scripts
+        run: for f in curl/*.sh; do bash -n "$f"; done
+      - name: Python
+        run: python -m py_compile python/*.py
+      - name: Node.js
+        run: for f in node/*.mjs; do node --check "$f"; done
+      - name: Go
+        working-directory: go
+        run: |
+          go vet ./...
+          test -z "$(gofmt -l .)"

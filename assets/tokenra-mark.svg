@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title>TokenRa</title>
+  <rect x="2" y="2" width="20" height="20" rx="6" fill="#1769e0"/>
+  <path d="M6.5 6.5h8.25v3H12.1v8h-3v-8H6.5z" fill="#fff"/>
+  <path d="M15.5 8.5h2.25v2.25H20v2.5h-2.25v2.25H15.5z" fill="#4de0ff"/>
+</svg>

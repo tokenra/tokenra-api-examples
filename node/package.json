@@ -1,0 +1,21 @@
+{
+  "name": "tokenra-api-examples",
+  "private": true,
+  "type": "module",
+  "description": "Node.js examples for the TokenRa OpenAI-compatible API",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "chat": "node chat.mjs",
+    "stream": "node stream.mjs",
+    "tools": "node tool-calling.mjs",
+    "vision": "node vision.mjs",
+    "image": "node image.mjs",
+    "video": "node video.mjs",
+    "decision": "node decision.mjs"
+  },
+  "dependencies": {
+    "openai": "^7.43.0"
+  }
+}
